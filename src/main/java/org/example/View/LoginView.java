@@ -46,10 +46,7 @@ public class LoginView extends JFrame {
         workspacePanel.setBackground(new Color(250, 242, 242));
         workspacePanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
 
-        // =========================================================================
-        // --- 2. KALIWANG PANEL: INPUT FORM CONTAINER (ANG LIHIM SA PAG-AYOS) ---
-        // Gagamit tayo ng BoxLayout (Y_AXIS) para hindi ma-stretch ang taas ng fields
-        // =========================================================================
+
         JPanel leftPanelWrapper = new JPanel();
         leftPanelWrapper.setLayout(new BoxLayout(leftPanelWrapper, BoxLayout.Y_AXIS));
         leftPanelWrapper.setBackground(new Color(250, 242, 242));
@@ -67,7 +64,7 @@ public class LoginView extends JFrame {
         txtName = new JTextField();
         txtName.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtName.setBorder(BorderFactory.createLineBorder(new Color(211, 84, 0), 1));
-        txtName.setMaximumSize(new Dimension(340, 35)); // Nilimitahan ang taas sa 35 pixels para maging square/rectangular strip
+        txtName.setMaximumSize(new Dimension(340, 35));
         txtName.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         // Student Number Field Setup
@@ -79,7 +76,7 @@ public class LoginView extends JFrame {
         txtStudentNumber = new JTextField();
         txtStudentNumber.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtStudentNumber.setBorder(BorderFactory.createLineBorder(new Color(211, 84, 0), 1));
-        txtStudentNumber.setMaximumSize(new Dimension(340, 35)); // 35 pixels limit
+        txtStudentNumber.setMaximumSize(new Dimension(340, 35));
         txtStudentNumber.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         // Submit Button Setup
@@ -89,7 +86,7 @@ public class LoginView extends JFrame {
         btnSubmit.setBackground(new Color(214, 48, 49));
         btnSubmit.setFocusable(false);
         btnSubmit.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnSubmit.setMaximumSize(new Dimension(340, 40)); // 40 pixels max height para malinis tingnan
+        btnSubmit.setMaximumSize(new Dimension(340, 40));
         btnSubmit.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,7 +94,7 @@ public class LoginView extends JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) { btnSubmit.setBackground(new Color(214, 48, 49)); }
         });
 
-        // Pagsasamahin ang mga fields sa Left Wrapper na may Rigid Space gaps
+
         leftPanelWrapper.add(Box.createRigidArea(new Dimension(0, 10))); // Top padding
         leftPanelWrapper.add(lblName);
         leftPanelWrapper.add(Box.createRigidArea(new Dimension(0, 8)));  // Gap sa pagitan ng label at textfield
@@ -109,7 +106,7 @@ public class LoginView extends JFrame {
         leftPanelWrapper.add(Box.createRigidArea(new Dimension(0, 25)));
         leftPanelWrapper.add(btnSubmit);
 
-        // --- 3. KANANG PANEL: HISTORY LOG ---
+
         JPanel historyPanel = new JPanel(new BorderLayout());
         historyPanel.setBackground(Color.WHITE);
         historyPanel.setBorder(BorderFactory.createTitledBorder(
@@ -129,7 +126,7 @@ public class LoginView extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         historyPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // Pagsamahin sa Main Layout panel
+
         workspacePanel.add(leftPanelWrapper, BorderLayout.WEST);
         workspacePanel.add(historyPanel, BorderLayout.CENTER);
 
